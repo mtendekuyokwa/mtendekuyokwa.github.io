@@ -1,141 +1,133 @@
-/*
-  The CSS in this style tag is based off of Bear Blog's default CSS.
-  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
-  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
- */
+@import "tailwindcss";
+@media (prefers-color-scheme: light) {
+  :root {
+    --text-50: #f6eff4;
+    --text-100: #eddee9;
+    --text-200: #dabed2;
+    --text-300: #c89dbc;
+    --text-400: #b67ca5;
+    --text-500: #a35c8f;
+    --text-600: #834972;
+    --text-700: #623756;
+    --text-800: #412539;
+    --text-900: #21121d;
+    --text-950: #10090e;
 
-:root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
-	--black: 15, 18, 25;
-	--gray: 96, 115, 159;
-	--gray-light: 229, 233, 240;
-	--gray-dark: 34, 41, 57;
-	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
-	--box-shadow:
-		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
-		0 16px 32px rgba(var(--gray), 33%);
+    --background-50: #f6eff4;
+    --background-100: #ecdfe9;
+    --background-200: #dabed3;
+    --background-300: #c79ebd;
+    --background-400: #b57da7;
+    --background-500: #a25d91;
+    --background-600: #824a74;
+    --background-700: #613857;
+    --background-800: #41253a;
+    --background-900: #20131d;
+    --background-950: #10090e;
+
+    --primary-50: #f5eff4;
+    --primary-100: #ecdfe8;
+    --primary-200: #d8c0d1;
+    --primary-300: #c5a0ba;
+    --primary-400: #b181a4;
+    --primary-500: #9e618d;
+    --primary-600: #7e4e71;
+    --primary-700: #5f3a54;
+    --primary-800: #3f2738;
+    --primary-900: #20131c;
+    --primary-950: #100a0e;
+
+    --secondary-50: #f5f3ef;
+    --secondary-100: #ece7df;
+    --secondary-200: #d9d0bf;
+    --secondary-300: #c6b89f;
+    --secondary-400: #b3a180;
+    --secondary-500: #9f8960;
+    --secondary-600: #806e4d;
+    --secondary-700: #605239;
+    --secondary-800: #403726;
+    --secondary-900: #201b13;
+    --secondary-950: #100e0a;
+
+    --accent-50: #f5f5ef;
+    --accent-100: #ececdf;
+    --accent-200: #d8d9bf;
+    --accent-300: #c5c69f;
+    --accent-400: #b2b380;
+    --accent-500: #9e9f60;
+    --accent-600: #7f804d;
+    --accent-700: #5f6039;
+    --accent-800: #3f4026;
+    --accent-900: #202013;
+    --accent-950: #10100a;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-50: #10090e;
+    --text-100: #20131c;
+    --text-200: #402639;
+    --text-300: #603955;
+    --text-400: #814b71;
+    --text-500: #a15e8e;
+    --text-600: #b47ea4;
+    --text-700: #c69fbb;
+    --text-800: #d9bfd2;
+    --text-900: #ecdfe8;
+    --text-950: #f6eff4;
+
+    --background-50: #10090e;
+    --background-100: #20131d;
+    --background-200: #41253a;
+    --background-300: #613857;
+    --background-400: #824a74;
+    --background-500: #a25d91;
+    --background-600: #b57da7;
+    --background-700: #c79ebd;
+    --background-800: #dabed3;
+    --background-900: #ecdfe9;
+    --background-950: #f6eff4;
+
+    --primary-50: #100a0e;
+    --primary-100: #20131c;
+    --primary-200: #402639;
+    --primary-300: #603955;
+    --primary-400: #804d71;
+    --primary-500: #9f608d;
+    --primary-600: #b380a4;
+    --primary-700: #c69fbb;
+    --primary-800: #d9bfd2;
+    --primary-900: #ecdfe8;
+    --primary-950: #f5eff4;
+
+    --secondary-50: #100e0a;
+    --secondary-100: #201b13;
+    --secondary-200: #403726;
+    --secondary-300: #605239;
+    --secondary-400: #806e4d;
+    --secondary-500: #9f8960;
+    --secondary-600: #b3a180;
+    --secondary-700: #c6b89f;
+    --secondary-800: #d9d0bf;
+    --secondary-900: #ece7df;
+    --secondary-950: #f5f3ef;
+
+    --accent-50: #10100a;
+    --accent-100: #202013;
+    --accent-200: #3f4026;
+    --accent-300: #5f6039;
+    --accent-400: #7f804d;
+    --accent-500: #9e9f60;
+    --accent-600: #b2b380;
+    --accent-700: #c5c69f;
+    --accent-800: #d8d9bf;
+    --accent-900: #ececdf;
+    --accent-950: #f5f5ef;
+  }
 }
 body {
-	font-family: var(--font-atkinson);
-	margin: 0;
-	padding: 0;
-	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
-	background-size: 100% 600px;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
-	font-size: 20px;
-	line-height: 1.7;
-}
-main {
-	width: 720px;
-	max-width: calc(100% - 2em);
-	margin: auto;
-	padding: 3em 1em;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: 0 0 0.5rem 0;
-	color: rgb(var(--black));
-	line-height: 1.2;
-}
-h1 {
-	font-size: 3.052em;
-}
-h2 {
-	font-size: 2.441em;
-}
-h3 {
-	font-size: 1.953em;
-}
-h4 {
-	font-size: 1.563em;
-}
-h5 {
-	font-size: 1.25em;
-}
-strong,
-b {
-	font-weight: 700;
-}
-a {
-	color: var(--accent);
-}
-a:hover {
-	color: var(--accent);
-}
-p {
-	margin-bottom: 1em;
-}
-.prose p {
-	margin-bottom: 2em;
-}
-textarea {
-	width: 100%;
-	font-size: 16px;
-}
-input {
-	font-size: 16px;
-}
-table {
-	width: 100%;
-}
-img {
-	max-width: 100%;
-	height: auto;
-	border-radius: 8px;
-}
-code {
-	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
-	border-radius: 2px;
-}
-pre {
-	padding: 1.5em;
-	border-radius: 8px;
-}
-pre > code {
-	all: unset;
-}
-blockquote {
-	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
-	margin: 0;
-	font-size: 1.333em;
-}
-hr {
-	border: none;
-	border-top: 1px solid rgb(var(--gray-light));
-}
-@media (max-width: 720px) {
-	body {
-		font-size: 18px;
-	}
-	main {
-		padding: 1em;
-	}
-}
-
-.sr-only {
-	border: 0;
-	padding: 0;
-	margin: 0;
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
-	clip: rect(1px 1px 1px 1px);
-	/* maybe deprecated but we need to support legacy browsers */
-	clip: rect(1px, 1px, 1px, 1px);
-	/* modern browsers, clip-path works inwards from each corner */
-	clip-path: inset(50%);
-	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
-	white-space: nowrap;
+  background-color: var(--background-950);
+  color: var(--text-50);
+  font-family: "Inter", sans-serif;
+  font-family: var(--font-atkinson);
 }
