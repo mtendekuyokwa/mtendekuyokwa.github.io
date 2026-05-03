@@ -11,6 +11,7 @@ export default defineConfig({
     plugins: [tailwind()],
   },
   site: "https://mtendekuyokwa.github.io",
+  base: "/mtendekuyokwa.github.io",
   integrations: [mdx(), sitemap()],
   fonts: [
     {
