@@ -1,63 +1,303 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_AUTHOR, SOCIAL_LINKS } from '../consts';
+import '../styles/global.css';
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage={AboutHeroImage}
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead 
+      title={`${SITE_AUTHOR} - About`} 
+      description="Learn more about Mtende - a builder, explorer, and tinkerer crafting tools and sharing ideas."
+    />
+  </head>
+  <body class="about-page">
+    <Header currentPath="/about" />
+    
+    <main class="about-main">
+      <section class="about-hero">
+        <h1>About Me</h1>
+        <p class="lead">I'm a builder and thinker exploring the intersection of technology and design.</p>
+      </section>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+      <article class="about-content">
+        <section class="about-section">
+          <h2>The Journey</h2>
+          <p>
+            I'm {SITE_AUTHOR}, a student at the Malawi University of Business and Applied Science with a passion for building tools that solve real problems. When I'm not studying, I'm usually working on <strong>Jiya</strong>, my side project that pushes me to think differently about technology and user experience.
+          </p>
+          <p>
+            I believe in the power of thoughtful design, clean code, and meaningful innovation. Every project is an opportunity to learn something new and challenge the status quo.
+          </p>
+        </section>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+        <section class="about-section">
+          <h2>What I Do</h2>
+          <div class="skill-grid">
+            <div class="skill-card">
+              <h3>Build</h3>
+              <p>Creating applications and tools that make a difference. From full-stack development to product design, I focus on building things people actually want to use.</p>
+            </div>
+            <div class="skill-card">
+              <h3>Think</h3>
+              <p>Exploring ideas through writing. My blog is where I share lessons, experiments, and thoughts on technology, design, and the craft of building.</p>
+            </div>
+            <div class="skill-card">
+              <h3>Learn</h3>
+              <p>Every project teaches me something new. I'm constantly experimenting with new technologies, frameworks, and approaches to solve problems better.</p>
+            </div>
+          </div>
+        </section>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+        <section class="about-section">
+          <h2>Interests</h2>
+          <ul class="interests-list">
+            <li>Product design and user experience</li>
+            <li>Full-stack web development</li>
+            <li>Open source contributions</li>
+            <li>Technical writing and blogging</li>
+            <li>Building communities around tools</li>
+            <li>Exploring new frameworks and technologies</li>
+          </ul>
+        </section>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+        <section class="about-section">
+          <h2>Let's Connect</h2>
+          <p>I'm always interested in collaborating, discussing ideas, or just having a good conversation about technology and design.</p>
+          <div class="connect-links">
+            <a href={SOCIAL_LINKS.email} class="connect-btn">Send me an email</a>
+            <a href={SOCIAL_LINKS.github} target="_blank" rel="noopener noreferrer" class="connect-btn secondary">View my GitHub</a>
+            <a href={SOCIAL_LINKS.twitter} target="_blank" rel="noopener noreferrer" class="connect-btn secondary">Follow on Twitter</a>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .about-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .about-main {
+    flex: 1;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .about-hero {
+    padding: 4rem 0;
+    text-align: center;
+  }
+
+  .about-hero h1 {
+    margin-bottom: 1rem;
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .about-content {
+    padding: 2rem 0 4rem;
+  }
+
+  .about-section {
+    margin-bottom: 4rem;
+  }
+
+  .about-section h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .about-section p {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+
+  .skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  .skill-card {
+    padding: 2rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--bg-secondary);
+    transition: all 0.3s ease;
+  }
+
+  .skill-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .skill-card h3 {
+    margin-bottom: 0.75rem;
+    color: var(--accent);
+    font-size: 1.25rem;
+  }
+
+  .skill-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .interests-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .interests-list li {
+    padding: 0;
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .interests-list li::before {
+    content: '→';
+    color: var(--accent);
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  .connect-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  .connect-btn {
+    padding: 0.875rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: 1.5px solid var(--border);
+  }
+
+  .connect-btn {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+  }
+
+  .connect-btn:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(99, 102, 241, 0.2);
+  }
+
+  .connect-btn.secondary {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--border);
+  }
+
+  .connect-btn.secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--bg-secondary);
+  }
+
+  @media (max-width: 768px) {
+    .about-main {
+      padding: 0 1.5rem;
+    }
+
+    .about-hero {
+      padding: 2rem 0;
+    }
+
+    .about-hero h1 {
+      font-size: 2rem;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+    }
+
+    .about-section {
+      margin-bottom: 3rem;
+    }
+
+    .skill-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .interests-list {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .connect-links {
+      flex-direction: column;
+    }
+
+    .connect-btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .about-main {
+      padding: 0 1rem;
+    }
+
+    .about-hero {
+      padding: 1.5rem 0;
+    }
+
+    .about-hero h1 {
+      font-size: 1.5rem;
+    }
+
+    .lead {
+      font-size: 1rem;
+    }
+
+    .skill-card {
+      padding: 1.5rem;
+    }
+
+    .about-section p {
+      font-size: 1rem;
+    }
+  }
+</style>
