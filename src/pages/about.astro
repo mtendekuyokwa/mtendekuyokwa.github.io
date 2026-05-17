@@ -9,295 +9,36 @@ import '../styles/global.css';
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead 
-      title={`${SITE_AUTHOR} - About`} 
-      description="Learn more about Mtende - a builder, explorer, and tinkerer crafting tools and sharing ideas."
+    <BaseHead
+      title={`${SITE_AUTHOR} - About`}
+      description="About Mtende Kuyokwa."
     />
   </head>
-  <body class="about-page">
+  <body>
     <Header currentPath="/about" />
-    
-    <main class="about-main">
-      <section class="about-hero">
-        <h1>About Me</h1>
-        <p class="lead">I'm a builder and thinker exploring the intersection of technology and design.</p>
-      </section>
 
-      <article class="about-content">
-        <section class="about-section">
-          <h2>The Journey</h2>
-          <p>
-            I'm {SITE_AUTHOR}, a student at the Malawi University of Business and Applied Science with a passion for building tools that solve real problems. When I'm not studying, I'm usually working on <strong>Jiya</strong>, my side project that pushes me to think differently about technology and user experience.
-          </p>
-          <p>
-            I believe in the power of thoughtful design, clean code, and meaningful innovation. Every project is an opportunity to learn something new and challenge the status quo.
-          </p>
-        </section>
+    <main class="max-w-2xl mx-auto px-4 py-8">
+      <h1 class="text-xl font-normal mb-8">About</h1>
 
-        <section class="about-section">
-          <h2>What I Do</h2>
-          <div class="skill-grid">
-            <div class="skill-card">
-              <h3>Build</h3>
-              <p>Creating applications and tools that make a difference. From full-stack development to product design, I focus on building things people actually want to use.</p>
-            </div>
-            <div class="skill-card">
-              <h3>Think</h3>
-              <p>Exploring ideas through writing. My blog is where I share lessons, experiments, and thoughts on technology, design, and the craft of building.</p>
-            </div>
-            <div class="skill-card">
-              <h3>Learn</h3>
-              <p>Every project teaches me something new. I'm constantly experimenting with new technologies, frameworks, and approaches to solve problems better.</p>
-            </div>
-          </div>
-        </section>
+      <div class="space-y-6 text-base leading-relaxed">
+        <p>
+          I'm {SITE_AUTHOR}, a student at the Malawi University of Business and Applied Science. I build tools that solve real problems and write about what I learn along the way.
+        </p>
 
-        <section class="about-section">
-          <h2>Interests</h2>
-          <ul class="interests-list">
-            <li>Product design and user experience</li>
-            <li>Full-stack web development</li>
-            <li>Open source contributions</li>
-            <li>Technical writing and blogging</li>
-            <li>Building communities around tools</li>
-            <li>Exploring new frameworks and technologies</li>
-          </ul>
-        </section>
+        <p>
+          I'm currently working on <a href="#">Jiya</a>. I'm interested in the space between product, design, and technology.
+        </p>
 
-        <section class="about-section">
-          <h2>Let's Connect</h2>
-          <p>I'm always interested in collaborating, discussing ideas, or just having a good conversation about technology and design.</p>
-          <div class="connect-links">
-            <a href={SOCIAL_LINKS.email} class="connect-btn">Send me an email</a>
-            <a href={SOCIAL_LINKS.github} target="_blank" rel="noopener noreferrer" class="connect-btn secondary">View my GitHub</a>
-            <a href={SOCIAL_LINKS.twitter} target="_blank" rel="noopener noreferrer" class="connect-btn secondary">Follow on Twitter</a>
-          </div>
-        </section>
-      </article>
+        <h2 class="text-base font-normal mt-10 mb-4">Contact</h2>
+
+        <p>
+          <a href={SOCIAL_LINKS.email}>Email</a> /
+          <a href={SOCIAL_LINKS.github}>GitHub</a> /
+          <a href={SOCIAL_LINKS.twitter}>Twitter</a>
+        </p>
+      </div>
     </main>
 
     <Footer />
   </body>
 </html>
-
-<style>
-  .about-page {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-
-  .about-main {
-    flex: 1;
-    max-width: 900px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-
-  .about-hero {
-    padding: 4rem 0;
-    text-align: center;
-  }
-
-  .about-hero h1 {
-    margin-bottom: 1rem;
-    font-size: clamp(2rem, 5vw, 3rem);
-  }
-
-  .lead {
-    font-size: 1.25rem;
-    color: var(--text-secondary);
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
-  }
-
-  .about-content {
-    padding: 2rem 0 4rem;
-  }
-
-  .about-section {
-    margin-bottom: 4rem;
-  }
-
-  .about-section h2 {
-    margin-bottom: 1.5rem;
-  }
-
-  .about-section p {
-    font-size: 1.05rem;
-    color: var(--text-secondary);
-    line-height: 1.8;
-    margin-bottom: 1.25rem;
-  }
-
-  .skill-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
-  }
-
-  .skill-card {
-    padding: 2rem;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    background: var(--bg-secondary);
-    transition: all 0.3s ease;
-  }
-
-  .skill-card:hover {
-    border-color: var(--accent);
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
-    transform: translateY(-2px);
-  }
-
-  .skill-card h3 {
-    margin-bottom: 0.75rem;
-    color: var(--accent);
-    font-size: 1.25rem;
-  }
-
-  .skill-card p {
-    margin: 0;
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-  }
-
-  .interests-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .interests-list li {
-    padding: 0;
-    margin: 0;
-    color: var(--text-secondary);
-    font-size: 1.05rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .interests-list li::before {
-    content: '→';
-    color: var(--accent);
-    font-weight: 600;
-    flex-shrink: 0;
-  }
-
-  .connect-links {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-  }
-
-  .connect-btn {
-    padding: 0.875rem 1.5rem;
-    border-radius: 8px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: inline-block;
-    border: 1.5px solid var(--border);
-  }
-
-  .connect-btn {
-    background: var(--accent);
-    color: white;
-    border-color: var(--accent);
-  }
-
-  .connect-btn:hover {
-    background: var(--accent-hover);
-    border-color: var(--accent-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(99, 102, 241, 0.2);
-  }
-
-  .connect-btn.secondary {
-    background: transparent;
-    color: var(--text);
-    border-color: var(--border);
-  }
-
-  .connect-btn.secondary:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    background: var(--bg-secondary);
-  }
-
-  @media (max-width: 768px) {
-    .about-main {
-      padding: 0 1.5rem;
-    }
-
-    .about-hero {
-      padding: 2rem 0;
-    }
-
-    .about-hero h1 {
-      font-size: 2rem;
-    }
-
-    .lead {
-      font-size: 1.1rem;
-    }
-
-    .about-section {
-      margin-bottom: 3rem;
-    }
-
-    .skill-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-
-    .interests-list {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-
-    .connect-links {
-      flex-direction: column;
-    }
-
-    .connect-btn {
-      width: 100%;
-      text-align: center;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .about-main {
-      padding: 0 1rem;
-    }
-
-    .about-hero {
-      padding: 1.5rem 0;
-    }
-
-    .about-hero h1 {
-      font-size: 1.5rem;
-    }
-
-    .lead {
-      font-size: 1rem;
-    }
-
-    .skill-card {
-      padding: 1.5rem;
-    }
-
-    .about-section p {
-      font-size: 1rem;
-    }
-  }
-</style>

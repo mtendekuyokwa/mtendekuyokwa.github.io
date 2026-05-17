@@ -3,7 +3,6 @@ import '../../styles/global.css';
 import { getCollection } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
-import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 
@@ -15,220 +14,24 @@ const posts = (await getCollection('blog')).sort(
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={`${SITE_TITLE} - Thoughts`} description={SITE_DESCRIPTION} />
+		<BaseHead title={`${SITE_TITLE} - Essays`} description={SITE_DESCRIPTION} />
 	</head>
-	<body class="blog-list-page">
+	<body>
 		<Header currentPath="/blog" />
-		<main class="blog-main">
-			<div class="blog-container">
-				<section class="blog-header">
-					<h1>Thoughts</h1>
-					<p>A collection of ideas, experiments, and lessons learned.</p>
-				</section>
 
-				{posts.length > 0 ? (
-					<section class="posts-list">
-						{posts.map((post) => (
-							<article class="post-item">
-								<a href={`/blog/${post.id}/`} class="post-item-link">
-									<div class="post-item-content">
-										<div class="post-item-header">
-											<h2 class="post-item-title">{post.data.title}</h2>
-											<time class="post-item-date">
-												<FormattedDate date={post.data.pubDate} />
-											</time>
-										</div>
-										<p class="post-item-description">{post.data.description}</p>
-										<div class="post-item-footer">
-											<span class="read-more">Read more →</span>
-										</div>
-									</div>
-								</a>
-							</article>
-						))}
-					</section>
-				) : (
-					<section class="empty-state">
-						<p>No posts yet. Check back soon!</p>
-					</section>
-				)}
-			</div>
+		<main class="max-w-2xl mx-auto px-4 py-8">
+			<h1 class="text-xl font-normal mb-8">Essays</h1>
+
+			<ul class="space-y-4">
+				{posts.map((post) => (
+					<li class="flex justify-between items-baseline pb-4 border-b border-border">
+						<a href={`/blog/${post.id}/`} class="hover:underline">{post.data.title}</a>
+						<span class="text-sm text-text-tertiary ml-4 whitespace-nowrap">{post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
+					</li>
+				))}
+			</ul>
 		</main>
+
 		<Footer />
 	</body>
 </html>
-
-<style>
-	.blog-list-page {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
-
-	.blog-main {
-		flex: 1;
-		max-width: 900px;
-		width: 100%;
-		margin: 0 auto;
-		padding: 0 2rem;
-	}
-
-	.blog-container {
-		padding: 4rem 0;
-	}
-
-	.blog-header {
-		margin-bottom: 4rem;
-		text-align: center;
-	}
-
-	.blog-header h1 {
-		margin-bottom: 0.5rem;
-	}
-
-	.blog-header p {
-		font-size: 1.1rem;
-		color: var(--text-secondary);
-		max-width: 500px;
-		margin: 0 auto;
-	}
-
-	.posts-list {
-		display: flex;
-		flex-direction: column;
-		gap: 2rem;
-	}
-
-	.post-item {
-		border: 1px solid var(--border);
-		border-radius: 12px;
-		overflow: hidden;
-		transition: all 0.3s ease;
-	}
-
-	.post-item:hover {
-		border-color: var(--accent);
-		box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
-		transform: translateY(-2px);
-	}
-
-	.post-item-link {
-		display: block;
-		text-decoration: none;
-		color: inherit;
-	}
-
-	.post-item-content {
-		padding: 2rem;
-	}
-
-	.post-item-header {
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-start;
-		gap: 1rem;
-		margin-bottom: 1rem;
-	}
-
-	.post-item-title {
-		font-size: 1.5rem;
-		line-height: 1.3;
-		margin: 0;
-	}
-
-	.post-item-date {
-		color: var(--text-tertiary);
-		font-size: 0.9rem;
-		white-space: nowrap;
-		flex-shrink: 0;
-	}
-
-	.post-item-description {
-		color: var(--text-secondary);
-		font-size: 1rem;
-		margin: 0 0 1rem 0;
-		line-height: 1.6;
-	}
-
-	.post-item-footer {
-		display: flex;
-		align-items: center;
-	}
-
-	.read-more {
-		color: var(--accent);
-		font-weight: 600;
-		transition: all 0.2s ease;
-	}
-
-	.post-item:hover .read-more {
-		color: var(--accent-hover);
-	}
-
-	.empty-state {
-		text-align: center;
-		padding: 4rem 2rem;
-		color: var(--text-secondary);
-	}
-
-	@media (max-width: 768px) {
-		.blog-main {
-			padding: 0 1.5rem;
-		}
-
-		.blog-container {
-			padding: 2rem 0;
-		}
-
-		.blog-header {
-			margin-bottom: 2rem;
-		}
-
-		.blog-header h1 {
-			font-size: 2rem;
-		}
-
-		.post-item-content {
-			padding: 1.5rem;
-		}
-
-		.post-item-header {
-			flex-direction: column;
-			gap: 0.5rem;
-		}
-
-		.post-item-title {
-			font-size: 1.25rem;
-		}
-
-		.post-item-date {
-			font-size: 0.85rem;
-		}
-	}
-
-	@media (max-width: 480px) {
-		.blog-main {
-			padding: 0 1rem;
-		}
-
-		.blog-header h1 {
-			font-size: 1.5rem;
-		}
-
-		.posts-list {
-			gap: 1rem;
-		}
-
-		.post-item-content {
-			padding: 1rem;
-		}
-
-		.post-item-title {
-			font-size: 1.1rem;
-		}
-
-		.post-item-description {
-			font-size: 0.95rem;
-		}
-	}
-</style>

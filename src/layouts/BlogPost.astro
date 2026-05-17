@@ -15,286 +15,121 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} />
-		<style>
-			.blog-post-page {
-				display: flex;
-				flex-direction: column;
-				min-height: 100vh;
-			}
-
-			main {
-				flex: 1;
-				width: 100%;
-				max-width: 900px;
-				margin: 0 auto;
-				padding: 0 2rem;
-			}
-
-			.post-container {
-				padding: 3rem 0;
-			}
-
-			.hero-image {
-				margin: 3rem 0;
-				border-radius: 12px;
-				overflow: hidden;
-			}
-
-			.hero-image img {
-				width: 100%;
-				height: auto;
-				display: block;
-			}
-
-			.prose {
-				width: 100%;
-				color: var(--text-secondary);
-			}
-
-			.post-title {
-				margin-bottom: 2rem;
-				text-align: center;
-			}
-
-			.post-title h1 {
-				margin-bottom: 1rem;
-				font-size: clamp(2rem, 5vw, 3rem);
-			}
-
-			.post-meta {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				gap: 1rem;
-				margin-bottom: 1.5rem;
-				flex-wrap: wrap;
-			}
-
-			.post-date {
-				color: var(--text-tertiary);
-				font-size: 0.95rem;
-				font-weight: 500;
-			}
-
-			.post-date-separator {
-				color: var(--border);
-			}
-
-			.last-updated-on {
-				font-style: italic;
-				color: var(--text-tertiary);
-				font-size: 0.9rem;
-			}
-
-			.post-divider {
-				margin: 2rem 0;
-				border: none;
-				border-top: 1px solid var(--border);
-			}
-
-			.prose-content {
-				line-height: 1.8;
-			}
-
-			.prose-content > *:first-child {
-				margin-top: 0;
-			}
-
-			.prose-content > *:last-child {
-				margin-bottom: 0;
-			}
-
-			.prose-content h2 {
-				margin-top: 2em;
-				margin-bottom: 1em;
-			}
-
-			.prose-content h3 {
-				margin-top: 1.5em;
-				margin-bottom: 0.75em;
-			}
-
-			.prose-content p {
-				margin-bottom: 1.25em;
-			}
-
-			.prose-content ul,
-			.prose-content ol {
-				margin: 1.25em 0;
-			}
-
-			.prose-content li {
-				margin-bottom: 0.5em;
-			}
-
-			.prose-content blockquote {
-				margin: 1.5em 0;
-				padding-left: 1.5em;
-				border-left: 3px solid var(--accent);
-			}
-
-			.prose-content code {
-				background: var(--bg-secondary);
-				padding: 0.2em 0.4em;
-				border-radius: 4px;
-				font-size: 0.9em;
-				color: var(--accent);
-			}
-
-			.prose-content pre {
-				background: var(--bg-secondary);
-				padding: 1.5em;
-				border-radius: 8px;
-				overflow-x: auto;
-				margin: 1.5em 0;
-				border: 1px solid var(--border);
-			}
-
-			.prose-content pre code {
-				background: none;
-				padding: 0;
-				color: inherit;
-			}
-
-			/* Back button */
-			.back-link {
-				display: inline-flex;
-				align-items: center;
-				gap: 0.5rem;
-				margin-bottom: 2rem;
-				color: var(--text-secondary);
-				text-decoration: none;
-				transition: all 0.2s ease;
-				font-size: 0.95rem;
-				font-weight: 500;
-			}
-
-			.back-link:hover {
-				color: var(--accent);
-			}
-
-			.back-link::before {
-				content: '←';
-				transition: transform 0.2s ease;
-			}
-
-			.back-link:hover::before {
-				transform: translateX(-3px);
-			}
-
-			/* Related posts section would go here */
-			.post-footer {
-				margin-top: 4rem;
-				padding-top: 2rem;
-				border-top: 1px solid var(--border);
-				text-align: center;
-			}
-
-			@media (max-width: 768px) {
-				main {
-					padding: 0 1.5rem;
-				}
-
-				.post-container {
-					padding: 2rem 0;
-				}
-
-				.post-title h1 {
-					font-size: 1.75rem;
-					margin-bottom: 0.75rem;
-				}
-
-				.post-meta {
-					flex-direction: column;
-					gap: 0.5rem;
-					margin-bottom: 1rem;
-				}
-
-				.hero-image {
-					margin: 2rem 0;
-					border-radius: 8px;
-				}
-
-				.prose-content h2 {
-					margin-top: 1.5em;
-					font-size: 1.25rem;
-				}
-
-				.prose-content h3 {
-					font-size: 1.1rem;
-					margin-top: 1.25em;
-				}
-			}
-
-			@media (max-width: 480px) {
-				main {
-					padding: 0 1rem;
-				}
-
-				.post-container {
-					padding: 1.5rem 0;
-				}
-
-				.post-title h1 {
-					font-size: 1.5rem;
-				}
-
-				.post-meta {
-					font-size: 0.9rem;
-				}
-
-				.prose-content {
-					line-height: 1.7;
-				}
-
-				.prose-content p {
-					margin-bottom: 1em;
-				}
-			}
-		</style>
 	</head>
 
-	<body class="blog-post-page">
+	<body>
 		<Header />
-		<main>
-			<article class="post-container">
-				<a href="/blog" class="back-link">Back to all thoughts</a>
 
-				<div class="post-title">
-					<h1>{title}</h1>
-					<div class="post-meta">
-						<time class="post-date">
-							<FormattedDate date={pubDate} />
-						</time>
-						{
-							updatedDate && (
-								<>
-									<span class="post-date-separator">•</span>
-									<div class="last-updated-on">
-										Updated <FormattedDate date={updatedDate} />
-									</div>
-								</>
-							)
-						}
+		<main class="max-w-2xl mx-auto px-4 py-8">
+			<article>
+				<header class="mb-10">
+					<h1 class="text-2xl font-normal mb-3">{title}</h1>
+					<div class="text-sm text-text-tertiary">
+						<FormattedDate date={pubDate} />
+						{updatedDate && (
+							<span> · Updated <FormattedDate date={updatedDate} /></span>
+						)}
 					</div>
-					<hr class="post-divider" />
-				</div>
+				</header>
 
 				{heroImage && (
-					<div class="hero-image">
+					<div class="mb-10">
 						<Image width={1020} height={510} src={heroImage} alt={title} />
 					</div>
 				)}
 
-				<div class="prose prose-content">
+				<div class="prose prose-base max-w-none">
 					<slot />
 				</div>
-
-				<div class="post-footer">
-					<p>Thanks for reading! Have thoughts? Let me know on Twitter or GitHub.</p>
-				</div>
 			</article>
+
+			<footer class="mt-12 pt-6 border-t border-border">
+				<a href="/blog" class="text-sm">&larr; Back to essays</a>
+			</footer>
 		</main>
+
 		<Footer />
 	</body>
 </html>
+
+<style>
+	:global(.prose) {
+		font-family: Georgia, serif;
+		line-height: 1.7;
+		color: var(--color-text);
+	}
+
+	:global(.prose h2) {
+		font-size: 1.25rem;
+		font-weight: normal;
+		margin-top: 2rem;
+		margin-bottom: 0.75rem;
+	}
+
+	:global(.prose h3) {
+		font-size: 1.1rem;
+		font-weight: normal;
+		margin-top: 1.5rem;
+		margin-bottom: 0.5rem;
+	}
+
+	:global(.prose p) {
+		margin-bottom: 1rem;
+	}
+
+	:global(.prose a) {
+		color: var(--color-text);
+		text-decoration: underline;
+	}
+
+	:global(.prose a:hover) {
+		color: var(--color-text-secondary);
+	}
+
+	:global(.prose ul),
+	:global(.prose ol) {
+		margin: 1rem 0 1rem 1.5rem;
+	}
+
+	:global(.prose li) {
+		margin-bottom: 0.25rem;
+	}
+
+	:global(.prose code) {
+		background: var(--color-code-bg);
+		padding: 0.15rem 0.35rem;
+		font-family: 'Courier New', monospace;
+		font-size: 0.85em;
+	}
+
+	:global(.prose pre) {
+		background: var(--color-code-bg);
+		padding: 1rem;
+		overflow-x: auto;
+		margin: 1rem 0;
+		border: 1px solid var(--color-border);
+	}
+
+	:global(.prose pre code) {
+		background: none;
+		padding: 0;
+	}
+
+	:global(.prose blockquote) {
+		border-left: 2px solid var(--color-text-tertiary);
+		padding-left: 1rem;
+		margin: 1rem 0;
+		color: var(--color-text-secondary);
+		font-style: italic;
+	}
+
+	:global(.prose img) {
+		max-width: 100%;
+	}
+
+	:global(.prose hr) {
+		border: none;
+		border-top: 1px solid var(--color-border);
+		margin: 2rem 0;
+	}
+</style>
