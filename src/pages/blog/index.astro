@@ -20,7 +20,10 @@ const posts = (await getCollection('blog')).sort(
 		<Header currentPath="/blog" />
 
 		<main class="max-w-2xl mx-auto px-4 py-8">
-			<h1 class="text-xl font-normal mb-8">Essays</h1>
+			<div class="flex justify-between items-baseline mb-8">
+				<h1 class="text-xl font-normal">Essays</h1>
+				<a href="/rss.xml" class="text-sm text-text-tertiary hover:underline">RSS</a>
+			</div>
 
 			<ul class="space-y-4">
 				{posts.map((post) => (
