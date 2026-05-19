@@ -2,7 +2,7 @@
 title: "End of the semester"
 description: "A story on how I plan to spend my Holiday"
 pubDate: "May 19 2026"
-heroImage: "../../assets/blog-placeholder-3.jpg"
+heroImage: "../../assets/end-of-semester.jpeg"
 ---
 
 # TL;DR
