@@ -27,7 +27,7 @@ It made me think whether Typescript in my project is a solution to a non-problem
 
 # ON PYTORCH
 
-I will not be learning PyTorch per say but I will be going through the book, [deep learning for coders](https://course.fast.ai/). I read part of the first chapter. It is a dense but solid book. Most of the material mentioned are also spat out in the podcast [MachineLearningStreetTalk](https://www.youtube.com/c/MachineLearningStreetTalk) which shows the relevancy of the content sill.
+I will not be learning PyTorch per se but I will be going through the book, [deep learning for coders](https://course.fast.ai/). I read part of the first chapter. It is a dense but solid book. Most of the material mentioned are also spat out in the podcast [MachineLearningStreetTalk](https://www.youtube.com/c/MachineLearningStreetTalk) which shows the relevancy of the content still.
 
 Understanding machine learning from first principles will help me get the direction of how best to use AI in my dev work. Everyone on Hacker News and Lobsters makes these hot takes, but 9 out of 10 times, most of these people do not have a solid grasp on what AI core fundamentals are, and they make a judgment on what they think it is and not what it actually is. I mean, some of them do not even understand forward pass propagation and underfitting as a concept.
 
