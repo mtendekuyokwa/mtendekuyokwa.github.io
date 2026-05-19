@@ -54,14 +54,19 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
 <style>
 	:global(.prose) {
-		font-family: Georgia, serif;
+		font-family: Arial, Helvetica, serif;
 		line-height: 1.7;
 		color: var(--color-text);
 	}
 
-	:global(.prose h2) {
+	:global(.prose h1) {
 		font-size: 1.25rem;
-		font-weight: normal;
+		margin-top: 2rem;
+		margin-bottom: 0.75rem;
+    font-weight: bold;
+	}
+	:global(.prose h2) {
+		font-size: 1rem;
 		margin-top: 2rem;
 		margin-bottom: 0.75rem;
 	}
@@ -75,6 +80,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
 	:global(.prose p) {
 		margin-bottom: 1rem;
+    line-height: 2rem;
 	}
 
 	:global(.prose a) {
