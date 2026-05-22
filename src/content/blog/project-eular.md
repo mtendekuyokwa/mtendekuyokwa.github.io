@@ -1,13 +1,9 @@
 ---
 title: "Project Eular"
 description: "How I used clojure to get in to project eular"
-pubDate: "May 19 2026"
-heroImage: "../../assets/end-of-semester.jpeg"
+pubDate: "May 22 2026"
+heroImage: "../../assets/images/eular.webp"
 ---
-
-# TL;DR
-
-I solved a tech question in clojure
 
 # ABOUT EULAR
 
