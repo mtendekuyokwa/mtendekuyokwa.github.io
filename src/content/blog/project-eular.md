@@ -1,7 +1,7 @@
 ---
 title: "Project Eular"
 description: "How I used clojure to get in to project eular"
-pubDate: "May 22 2026"
+pubDate: "May 24 2026"
 heroImage: "../../assets/images/eular.webp"
 ---
 
