@@ -28,7 +28,7 @@ export default function Projects() {
           </motion.h2>
           <motion.div className="max-w-md md:justify-self-end" {...blurIn(1)}>
             <p className="text-white/55 text-[15px] leading-relaxed">
-              Apps, servers, and one very patient Brainfuck program. The rough
+              Apps, servers, and open-source PRs that made it upstream. The rough
               edges are public — the lessons, too.
             </p>
             <a

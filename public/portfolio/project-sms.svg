@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" fill="none">
+  <rect width="600" height="600" fill="#0d0d0d"/>
+  <g stroke="#ffffff" stroke-opacity="0.05">
+    <line x1="0" y1="120" x2="600" y2="120"/>
+    <line x1="0" y1="240" x2="600" y2="240"/>
+    <line x1="0" y1="360" x2="600" y2="360"/>
+    <line x1="0" y1="480" x2="600" y2="480"/>
+    <line x1="120" y1="0" x2="120" y2="600"/>
+    <line x1="240" y1="0" x2="240" y2="600"/>
+    <line x1="360" y1="0" x2="360" y2="600"/>
+    <line x1="480" y1="0" x2="480" y2="600"/>
+  </g>
+  <rect x="70" y="340" width="110" height="170" rx="16" stroke="#9AE26B" stroke-width="3" fill="none"/>
+  <path d="M225 380 h90 q18 0 18 18 v96 q0 18 -18 18 h-90" stroke="#ffffff" stroke-opacity="0.35" stroke-width="3" fill="none"/>
+  <line x1="250" y1="420" x2="318" y2="420" stroke="#ffffff" stroke-opacity="0.8" stroke-width="4" stroke-linecap="round"/>
+  <line x1="250" y1="446" x2="295" y2="446" stroke="#9AE26B" stroke-width="4" stroke-linecap="round"/>
+  <line x1="70" y1="130" x2="540" y2="130" stroke="#9AE26B" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="540" cy="130" r="9" fill="#9AE26B"/>
+  <circle cx="540" cy="130" r="16" stroke="#9AE26B" stroke-opacity="0.35" stroke-width="2"/>
+  <path d="M225 500 q18 12 36 0 q18 -12 36 0 q18 12 36 0" stroke="#ffffff" stroke-opacity="0.35" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <text x="70" y="240" font-family="'Neue Haas Grotesk Display Pro','NeueHaasDisplay','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="96" font-weight="800" letter-spacing="6" fill="#ffffff">SMS</text>
+  <text x="74" y="285" font-family="Arial,sans-serif" font-size="20" letter-spacing="4" fill="#9AE26B">→ LLM GATEWAY</text>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" fill="none">
+  <rect width="600" height="600" fill="#0d0d0d"/>
+  <g stroke="#ffffff" stroke-opacity="0.05">
+    <line x1="0" y1="120" x2="600" y2="120"/>
+    <line x1="0" y1="240" x2="600" y2="240"/>
+    <line x1="0" y1="360" x2="600" y2="360"/>
+    <line x1="0" y1="480" x2="600" y2="480"/>
+    <line x1="120" y1="0" x2="120" y2="600"/>
+    <line x1="240" y1="0" x2="240" y2="600"/>
+    <line x1="360" y1="0" x2="360" y2="600"/>
+    <line x1="480" y1="0" x2="480" y2="600"/>
+  </g>
+  <path d="M120 420 v-70 h120 v-70 h120" stroke="#ffffff" stroke-opacity="0.4" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <path d="M360 280 h120 v70 h120" stroke="#9AE26B" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <path d="M360 280 h120 v140 h120" stroke="#ffffff" stroke-opacity="0.4" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <circle cx="120" cy="420" r="9" fill="#ffffff" fill-opacity="0.4"/>
+  <circle cx="240" cy="350" r="9" fill="#ffffff" fill-opacity="0.4"/>
+  <circle cx="360" cy="280" r="12" fill="#9AE26B"/>
+  <circle cx="360" cy="280" r="20" stroke="#9AE26B" stroke-opacity="0.35" stroke-width="2"/>
+  <circle cx="480" cy="420" r="9" fill="#9AE26B"/>
+  <circle cx="600" cy="420" r="9" fill="#ffffff" fill-opacity="0.4"/>
+  <text x="70" y="190" font-family="'Neue Haas Grotesk Display Pro','NeueHaasDisplay','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="96" font-weight="800" letter-spacing="6" fill="#ffffff">OSS</text>
+  <text x="74" y="235" font-family="Arial,sans-serif" font-size="20" letter-spacing="4" fill="#9AE26B">CONTRIBUTIONS</text>
+  <text x="70" y="540" font-family="Arial,sans-serif" font-size="20" letter-spacing="3" fill="#ffffff" fill-opacity="0.6">NEOVIM · NOCTALIA</text>
+</svg>

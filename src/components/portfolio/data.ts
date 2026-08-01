@@ -3,10 +3,14 @@ export const LINKEDIN = "https://www.linkedin.com/in/mtende-kuyokwa-a71a60241/";
 export const MAILTO = "mailto:mtendekuyokwa19@gmail.com";
 export const JIYA_PLAY =
   "https://play.google.com/store/apps/details?id=com.mtendekuyokwa.jiya";
+export const JIYA_WEB = "https://jiyamw.app";
+export const OSS_PRS =
+  "https://github.com/search?q=is%3Apr+author%3Amtendekuyokwa&type=pullrequests";
 
 export const REPOS = {
   katholic: "https://github.com/mtendekuyokwa/katholic",
   kujiyaserver: "https://github.com/mtendekuyokwa/kujiyaserver",
+  jiyasite: "https://github.com/mtendekuyokwa/jiya-websitev2",
   jiyaweb: "https://github.com/mtendekuyokwa/jiyaweb",
   deathtotheworld: "https://github.com/mtendekuyokwa/deathtotheworld",
   lungcxr: "https://github.com/mtendekuyokwa/lungcxr_classification_gradcam",
@@ -77,9 +81,18 @@ export interface Project {
 export const PROJECTS: Project[] = [
   {
     title: "Jiya",
-    blurb: "Ridesharing for Malawi",
-    cover: "/portfolio/project-03.svg",
-    href: JIYA_PLAY,
+    blurb: "Carpooling for Malawi",
+    cover: "/portfolio/jiya-landing.jpg",
+    href: JIYA_WEB,
+    repoLabel: "view site",
+    repoHref: REPOS.jiyasite,
+  },
+  {
+    title: "SMS → LLM gateway",
+    blurb: "A gateway that wires SMS into an LLM backend",
+    cover: "/portfolio/project-sms.svg",
+    tall: true,
+    href: REPOS.kujiyaserver,
     repoLabel: "view repo",
     repoHref: REPOS.kujiyaserver,
   },
@@ -93,20 +106,11 @@ export const PROJECTS: Project[] = [
     repoHref: REPOS.katholic,
   },
   {
-    title: "Project Eular",
-    blurb: "Math problems, solved in Clojure",
-    cover: "/portfolio/project-04.webp",
-    href: "/blog/project-eular/",
-    repoLabel: "view write-up",
-    repoHref: "/blog/project-eular/",
-  },
-  {
-    title: "deathtotheworld",
-    blurb: "An esolang love letter, in Brainfuck",
-    cover: "/portfolio/project-05.svg",
-    tall: true,
-    href: REPOS.deathtotheworld,
-    repoLabel: "view repo",
-    repoHref: REPOS.deathtotheworld,
+    title: "OSS contributions",
+    blurb: "Merged PRs in neovim, noctalia & friends",
+    cover: "/portfolio/project-oss.svg",
+    href: OSS_PRS,
+    repoLabel: "see my PRs",
+    repoHref: OSS_PRS,
   },
 ];
