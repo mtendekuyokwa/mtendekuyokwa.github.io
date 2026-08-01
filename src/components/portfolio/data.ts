@@ -31,47 +31,36 @@ export interface ExperienceEntry {
 
 export const EXPERIENCE: ExperienceEntry[] = [
   {
-    period: "2022 — present",
-    role: "Software engineering student",
-    company: "Malawi University of Business and Applied Sciences",
+    period: "Jun 2026 — present",
+    role: "Student Technical Trainee",
+    company: "Malawi Liverpool Wellcome Research Programme",
     description:
-      "Studying while shipping side projects and an essay archive on Clojure, agentic coding, and building from first principles.",
+      "Working with HPC infrastructure and training models at the Malawi Liverpool Wellcome Research Programme.",
     links: [],
   },
   {
-    period: "2024 — present",
-    role: "Founder & developer",
-    company: "Jiya",
+    period: "Apr 2026 — present",
+    role: "Student Researcher",
+    company: "Kuyesera AI Lab",
     description:
-      "Ridesharing for Malawi — an Android app on Google Play, a web presence, and a Go backend. Shipped end to end, from hailing a ride to paying for it.",
-    links: [
-      { label: "app", href: JIYA_PLAY },
-      { label: "server repo", href: REPOS.kujiyaserver },
-    ],
-  },
-  {
-    period: "2024 — 2025",
-    role: "Developer",
-    company: "Katholic",
-    description:
-      "Offline-first Flutter app for daily Catholic readings and the Way of the Cross, in English and Chichewa, backed by a local SQLite store.",
-    links: [{ label: "repo", href: REPOS.katholic }],
-  },
-  {
-    period: "2025 — present",
-    role: "Essayist",
-    company: "Notes on Clojure, agents & first principles",
-    description:
-      "Writing about functional programming and learning hard things. A Project Euler streak in Clojure keeps the essays honest.",
-    links: [{ label: "read", href: "/blog/" }],
-  },
-  {
-    period: "2026",
-    role: "Data & ML contributor",
-    company: "CXR Grad-CAM + data partnership workshops",
-    description:
-      "Chest X-ray classification with Grad-CAM heatmaps, plus LRLL Malawi and ASR audio-preparation workshops with the Data Partnership.",
+      "Working on TB imaging models with Grad-CAM explainability at Kuyesera AI Lab.",
     links: [{ label: "repo", href: REPOS.lungcxr }],
+  },
+  {
+    period: "Oct 2025 — Mar 2026",
+    role: "Software Engineer",
+    company: "iMoSyS",
+    description:
+      "Built a parser in Flutter for a crypto application and worked on the driver side of a taxi-hailing app.",
+    links: [],
+  },
+  {
+    period: "Oct 2024 — Jan 2025",
+    role: "Robotics Intern",
+    company: "Robotics Foundation LimitedMW",
+    description:
+      "Robotics internship at Robotics Foundation LimitedMW in Blantyre.",
+    links: [],
   },
 ];
 

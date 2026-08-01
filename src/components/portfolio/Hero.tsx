@@ -29,13 +29,13 @@ const CARDS: CardDef[] = [
     size: "w-[150px] aspect-[4/3]",
     depth: 18,
     badge: { icon: "github", href: REPOS.katholic, label: "katholic" },
-    image: { src: "/portfolio/project-01.png", alt: "Katholic project screenshot" },
+    image: { src: "/portfolio/profile.jpg", alt: "Mtende Kuyokwa" },
   },
   {
     position: { top: "2%", right: "2%" },
     size: "w-[260px] aspect-[16/9]",
     depth: 22,
-    image: { src: "/portfolio/project-03.svg", alt: "Jiya project screenshot" },
+    image: { src: "/portfolio/hackathon-group-gaiathon.jpg", alt: "Mtende with his group at Gaiathon" },
   },
   {
     position: { top: "7%", left: "4%" },
@@ -49,7 +49,7 @@ const CARDS: CardDef[] = [
     size: "w-[200px] aspect-[3/4]",
     depth: 26,
     badge: { icon: "external", href: JIYA_PLAY, label: "jiya" },
-    image: { src: "/portfolio/project-03.svg", alt: "Jiya featured project screenshot" },
+    image: { src: "/portfolio/robotics-project.jpg", alt: "Robotics project" },
     glow: "View project",
   },
   {
@@ -57,7 +57,7 @@ const CARDS: CardDef[] = [
     size: "w-[220px] aspect-[3/4]",
     depth: 20,
     badge: { icon: "github", href: REPOS.katholic, label: "katholic" },
-    image: { src: "/portfolio/project-02.png", alt: "Katholic project screenshot" },
+    image: { src: "/portfolio/photo-world-bank-meet-1.jpg", alt: "Mtende at a World Bank meet" },
   },
   {
     position: { bottom: "calc(6% - 10px)", left: "calc(34% - 90px)" },
@@ -69,7 +69,7 @@ const CARDS: CardDef[] = [
     position: { bottom: "6%", right: "22%" },
     size: "w-[230px] aspect-[16/10]",
     depth: 22,
-    image: { src: "/portfolio/project-04.webp", alt: "Project Eular screenshot" },
+    image: { src: "/portfolio/hackathon-group-gaiathon.jpg", alt: "Mtende with his group at Gaiathon" },
   },
 ];
 
