@@ -6,7 +6,6 @@ import { Logo } from "./ui";
 import { EASE, INTRO_DELAY } from "./variants";
 
 const NAV = [
-  { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Blog", href: "#blog" },

@@ -2,6 +2,14 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme inline {
+  --color-text: var(--color-text);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-tertiary: var(--color-text-tertiary);
+  --color-border: var(--color-border);
+  --color-code: var(--color-code-bg);
+}
+
 :root {
   --color-bg: #fff;
   --color-text: #111;
@@ -20,20 +28,22 @@
   --color-code-bg: #1a1a1a;
 }
 
-body {
-  font-family: Georgia, "Times New Roman", serif;
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  line-height: 1.6;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
+@layer base {
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
 
-a {
-  color: var(--color-text);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
+  a {
+    color: var(--color-text);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
 
-a:hover {
-  color: var(--color-text-secondary);
+  a:hover {
+    color: var(--color-text-secondary);
+  }
 }

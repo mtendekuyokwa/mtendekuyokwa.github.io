@@ -3,7 +3,6 @@ import { MotionConfig } from "framer-motion";
 import IntroSequence from "./IntroSequence";
 import TopBar from "./portfolio/TopBar";
 import Hero from "./portfolio/Hero";
-import About from "./portfolio/About";
 import Experience from "./portfolio/Experience";
 import Projects from "./portfolio/Projects";
 import BlogSection from "./portfolio/BlogSection";
@@ -21,7 +20,6 @@ export default function PortfolioLanding({ posts }: { posts: Post[] }) {
         <TopBar />
         <main>
           <Hero />
-          <About />
           <Experience />
           <Projects />
           <BlogSection posts={posts} />
