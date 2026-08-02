@@ -2,10 +2,11 @@
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
-import Header from '../components/Header.astro';
-import '../styles/global.css';
+import BlogBackdrop from '../components/blog/BlogBackdrop';
+import BlogFooter from '../components/blog/BlogFooter';
+import BlogHeader from '../components/blog/BlogHeader';
+import '../styles/landing.css';
 
 type Props = CollectionEntry<'blog'>['data'];
 
@@ -17,125 +18,186 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<BaseHead title={title} description={description} />
 	</head>
 
-	<body>
-		<Header />
+	<body class="landing blog-post">
+		<BlogBackdrop client:load />
+		<BlogHeader client:load />
 
-		<main class="max-w-2xl mx-auto px-4 py-8">
+		<main class="relative z-10 max-w-3xl mx-auto px-6 pt-44 pb-24">
 			<article>
-				<header class="mb-10">
-					<h1 class="text-2xl font-normal mb-3">{title}</h1>
-					<div class="text-sm text-text-tertiary">
-						<FormattedDate date={pubDate} />
+				<header class="mb-12">
+					<a
+						href="/blog/"
+						class="inline-flex items-center gap-3 text-xs uppercase tracking-widest text-white/70 hover:text-white transition-colors"
+					>
+						<span aria-hidden="true">&larr;</span>
+						Essays
+					</a>
+
+					<h1 class="mt-8 font-display font-bold uppercase text-4xl md:text-6xl leading-[0.98]">
+						{title}
+					</h1>
+
+					<p class="mt-5 text-white/55 text-[15px] leading-relaxed">
+						{description}
+					</p>
+
+					<div class="mt-6 flex flex-wrap items-center gap-4 text-xs uppercase tracking-widest text-white/50">
+						<span>
+							<FormattedDate date={pubDate} />
+						</span>
 						{updatedDate && (
-							<span> · Updated <FormattedDate date={updatedDate} /></span>
+							<span class="text-white/30">
+								&middot; Updated <FormattedDate date={updatedDate} />
+							</span>
 						)}
 					</div>
 				</header>
 
 				{heroImage && (
-					<div class="mb-10">
-						<Image width={1020} height={510} src={heroImage} alt={title} />
+					<div class="mb-12">
+						<Image
+							width={1020}
+							height={510}
+							src={heroImage}
+							alt={title}
+							class="w-full h-auto ring-1 ring-white/10"
+						/>
 					</div>
 				)}
 
-				<div class="prose prose-base max-w-none">
+				<div class="blog-prose">
 					<slot />
 				</div>
-			</article>
 
-			<footer class="mt-12 pt-6 border-t border-border">
-				<a href="/blog" class="text-sm">&larr; Back to essays</a>
-			</footer>
+				<footer class="mt-16 pt-8 border-t border-white/10 flex justify-between items-center">
+					<a
+						href="/blog/"
+						class="inline-flex items-center gap-3 text-xs uppercase tracking-widest text-white/70 hover:text-white transition-colors"
+					>
+						<span aria-hidden="true">&larr;</span>
+						All essays
+					</a>
+					<a
+						href="/"
+						class="inline-flex items-center gap-3 text-xs uppercase tracking-widest text-white/70 hover:text-white transition-colors"
+					>
+						Home
+						<span aria-hidden="true">&rarr;</span>
+					</a>
+				</footer>
+			</article>
 		</main>
 
-		<Footer />
+		<BlogFooter client:load />
 	</body>
 </html>
 
 <style>
-	:global(.prose) {
-		font-family: Arial, Helvetica, serif;
-		line-height: 1.7;
-		color: var(--color-text);
-	}
-
-	:global(.prose h1) {
-		font-size: 1.25rem;
-		margin-top: 2rem;
-		margin-bottom: 0.75rem;
-    font-weight: bold;
-	}
-	:global(.prose h2) {
+	:global(.blog-prose) {
+		color: oklch(0.94 0 0 / 0.85);
+		font-family: var(--font-body);
 		font-size: 1rem;
-		margin-top: 2rem;
-		margin-bottom: 0.75rem;
+		line-height: 1.8;
 	}
 
-	:global(.prose h3) {
-		font-size: 1.1rem;
-		font-weight: normal;
-		margin-top: 1.5rem;
-		margin-bottom: 0.5rem;
+	:global(.blog-prose p) {
+		margin-bottom: 1.5rem;
 	}
 
-	:global(.prose p) {
+	:global(.blog-prose h1),
+	:global(.blog-prose h2),
+	:global(.blog-prose h3),
+	:global(.blog-prose h4) {
+		font-family: var(--font-display);
+		font-weight: 700;
+		color: #fff;
+		letter-spacing: -0.02em;
+		text-transform: uppercase;
+		margin-top: 2.5rem;
 		margin-bottom: 1rem;
-    line-height: 2rem;
 	}
 
-	:global(.prose a) {
-		color: var(--color-text);
+	:global(.blog-prose h1) {
+		font-size: 1.75rem;
+	}
+
+	:global(.blog-prose h2) {
+		font-size: 1.5rem;
+	}
+
+	:global(.blog-prose h3) {
+		font-size: 1.15rem;
+	}
+
+	:global(.blog-prose h4) {
+		font-size: 1rem;
+	}
+
+	:global(.blog-prose a) {
+		color: var(--lime);
 		text-decoration: underline;
+		text-underline-offset: 3px;
 	}
 
-	:global(.prose a:hover) {
-		color: var(--color-text-secondary);
+	:global(.blog-prose a:hover) {
+		color: oklch(0.92 0.18 130 / 0.8);
 	}
 
-	:global(.prose ul),
-	:global(.prose ol) {
-		margin: 1rem 0 1rem 1.5rem;
+	:global(.blog-prose strong) {
+		color: #fff;
 	}
 
-	:global(.prose li) {
-		margin-bottom: 0.25rem;
+	:global(.blog-prose ul),
+	:global(.blog-prose ol) {
+		margin: 1rem 0 1.5rem 1.25rem;
 	}
 
-	:global(.prose code) {
-		background: var(--color-code-bg);
-		padding: 0.15rem 0.35rem;
-		font-family: 'Courier New', monospace;
-		font-size: 0.85em;
+	:global(.blog-prose li) {
+		margin-bottom: 0.4rem;
 	}
 
-	:global(.prose pre) {
-		background: var(--color-code-bg);
-		padding: 1rem;
-		overflow-x: auto;
-		margin: 1rem 0;
-		border: 1px solid var(--color-border);
-	}
-
-	:global(.prose pre code) {
-		background: none;
-		padding: 0;
-	}
-
-	:global(.prose blockquote) {
-		border-left: 2px solid var(--color-text-tertiary);
-		padding-left: 1rem;
-		margin: 1rem 0;
-		color: var(--color-text-secondary);
+	:global(.blog-prose blockquote) {
+		border-left: 2px solid var(--lime);
+		padding-left: 1.25rem;
+		margin: 1.75rem 0;
+		color: oklch(0.88 0 0 / 0.75);
 		font-style: italic;
 	}
 
-	:global(.prose img) {
-		max-width: 100%;
+	:global(.blog-prose code) {
+		background: oklch(1 0 0 / 0.08);
+		color: var(--lime);
+		padding: 0.15rem 0.35rem;
+		border-radius: 4px;
+		font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+		font-size: 0.85em;
 	}
 
-	:global(.prose hr) {
+	:global(.blog-prose pre) {
+		background: oklch(0.16 0 0);
+		border: 1px solid oklch(1 0 0 / 0.1);
+		border-radius: 8px;
+		padding: 1.25rem;
+		overflow-x: auto;
+		margin: 1.5rem 0;
+		box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.9);
+	}
+
+	:global(.blog-prose pre code) {
+		background: none;
+		color: oklch(0.95 0 0 / 0.9);
+		padding: 0;
+		font-size: 0.9em;
+	}
+
+	:global(.blog-prose hr) {
 		border: none;
-		border-top: 1px solid var(--color-border);
-		margin: 2rem 0;
+		border-top: 1px solid oklch(1 0 0 / 0.1);
+		margin: 2.5rem 0;
+	}
+
+	:global(.blog-prose img) {
+		max-width: 100%;
+		border-radius: 8px;
 	}
 </style>

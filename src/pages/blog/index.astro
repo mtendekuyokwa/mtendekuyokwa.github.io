@@ -1,40 +1,29 @@
 ---
-import '../../styles/global.css';
 import { getCollection } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
-import Footer from '../../components/Footer.astro';
-import Header from '../../components/Header.astro';
+import BlogIndex from '../../components/blog/BlogIndex';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import '../../styles/landing.css';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+
+const data = posts.map((post) => ({
+	title: post.data.title,
+	description: post.data.description,
+	pubDate: post.data.pubDate.toISOString(),
+	cover: post.data.heroImage ? post.data.heroImage.src : undefined,
+	url: `/blog/${post.id}/`,
+}));
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={`${SITE_TITLE} - Essays`} description={SITE_DESCRIPTION} />
+		<BaseHead title={`${SITE_TITLE} — Essays`} description={SITE_DESCRIPTION} />
 	</head>
-	<body>
-		<Header currentPath="/blog" />
-
-		<main class="max-w-2xl mx-auto px-4 py-8">
-			<div class="flex justify-between items-baseline mb-8">
-				<h1 class="text-xl font-normal">Essays</h1>
-				<a href="/rss.xml" class="text-sm text-text-tertiary hover:underline">RSS</a>
-			</div>
-
-			<ul class="space-y-4">
-				{posts.map((post) => (
-					<li class="flex justify-between items-baseline pb-4 border-b border-border">
-						<a href={`/blog/${post.id}/`} class="hover:underline">{post.data.title}</a>
-						<span class="text-sm text-text-tertiary ml-4 whitespace-nowrap">{post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
-					</li>
-				))}
-			</ul>
-		</main>
-
-		<Footer />
+	<body class="landing">
+		<BlogIndex client:load posts={data} />
 	</body>
 </html>
