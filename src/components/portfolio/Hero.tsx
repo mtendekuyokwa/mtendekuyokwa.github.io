@@ -25,7 +25,7 @@ interface CardDef {
 
 const CARDS: CardDef[] = [
   {
-    position: { top: "2%", left: "34%" },
+    position: { top: "34%", right: "6%" },
     size: "w-[150px] aspect-[4/3]",
     depth: 18,
     badge: { icon: "github", href: REPOS.katholic, label: "katholic" },
@@ -53,7 +53,7 @@ const CARDS: CardDef[] = [
     glow: "View project",
   },
   {
-    position: { top: "18%", left: "3%" },
+    position: { top: "30%", left: "44%" },
     size: "w-[220px] aspect-[3/4]",
     depth: 20,
     badge: { icon: "github", href: REPOS.katholic, label: "katholic" },
@@ -171,8 +171,16 @@ export default function Hero() {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -inset-y-16 -left-24 w-[min(780px,130%)]"
+          style={{
+            background:
+              "radial-gradient(ellipse 100% 80% at 30% 45%, oklch(0.03 0.01 240 / 0.7) 0%, transparent 70%)",
+          }}
+        />
         <motion.h1
-          className="font-display font-black text-7xl md:text-[110px] leading-[0.95] tracking-tight"
+          className="font-display font-black text-7xl md:text-[110px] leading-[0.95] tracking-tight [text-shadow:0_2px_24px_rgba(0,0,0,0.65),0_1px_4px_rgba(0,0,0,0.5)]"
           initial={{ opacity: 0, filter: "blur(12px)", y: 24 }}
           animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
           transition={{ duration: 1.1, ease: EASE, delay: INTRO_DELAY + 0.08 }}
@@ -183,7 +191,7 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p
-          className="mt-8 text-white/55 max-w-md text-[15px] leading-relaxed"
+          className="mt-8 text-white/70 max-w-md text-[15px] leading-relaxed [text-shadow:0_2px_12px_rgba(0,0,0,0.8)]"
           initial={{ opacity: 0, filter: "blur(12px)", y: 24 }}
           animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
           transition={{ duration: 1.1, ease: EASE, delay: INTRO_DELAY + 0.3 }}
